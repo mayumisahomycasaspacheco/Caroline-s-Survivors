@@ -4,6 +4,44 @@
 using namespace std;
 using namespace System;
 
+void dibujar_carrito(int x, int y)
+{
+	string lineas[6] = {
+"        _______",
+"       //  ||\\ \\",
+" _____//___||_\\ \\___",
+" )  _          _    \\",
+" |_/ \\________/ \\___|",
+"___\\_/________\\_/______"
+	};
+
+	for (int i = 0; i < 6; i++)
+	{
+		Console::SetCursorPosition(x, y + i);
+		cout << lineas[i];
+	}
+}
+
+void carrito(int xinicial, int xfinal, int y)
+{
+	string espacios(30, ' ');
+
+	for (int x = xinicial; x >= xfinal; x--)
+	{
+		dibujar_carrito(x, y);
+		Sleep(100);
+
+		if (x > xfinal)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				Console::SetCursorPosition(x, y + i);
+				cout << espacios;
+			}
+		}
+	}
+}
+
 void casita(int x, int y)
 {
 	string lineas[28] = {
@@ -96,10 +134,64 @@ void casita(int x, int y)
 	cout << lineas[27];
 }
 
+void personaje(int xinicial, int xfinal, int y, int casax, int casay, int carritox, int carritoy)
+{
+	string lineas[8] = {
+"  _",
+"_[_]_",
+" (_)",
+"//:\\\\",
+"\\|~|/",
+" |||",
+" |||",
+" - -",
+	};
+
+	string espacios(10, ' ');
+
+	for (int x = xinicial; x >= xfinal; x--)
+	{
+		for (int i = 0; i < 8; i++)
+		{
+			Console::SetCursorPosition(x, y + i);
+			cout << lineas[i];
+		}
+
+		Sleep(100);
+
+		if (x > xfinal)
+		{
+			for (int i = 0; i < 8; i++)
+			{
+				Console::SetCursorPosition(x, y + i);
+				cout << espacios;
+			}
+
+			casita(casax, casay);
+			dibujar_carrito(carritox, carritoy);
+
+		}
+
+	}
+
+	Sleep(200);
+
+	for (int i = 0; i < 8; i++)
+	{
+		Console::SetCursorPosition(xfinal, y + i);
+		cout << espacios;
+	}
+
+	casita(casax, casay);
+	dibujar_carrito(carritox, carritoy);
+}
+
 int main()
 {
 
-	casita(20, 1);
+	casita(7, 1);
+	carrito(95, 52, 23);
+	personaje(75, 20, 19, 7, 1, 52, 23);
 
 	_getch();
 	return 0;
