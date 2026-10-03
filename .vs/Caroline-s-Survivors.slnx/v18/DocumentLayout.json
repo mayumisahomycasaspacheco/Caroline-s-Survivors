@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Inicio_y_Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Inicio_y_Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Proyectil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Proyectil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Tirachinas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Tirachinas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Entidad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Entidad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Arma.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Arma.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Puerta_Secreta.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -17,6 +25,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Casita_y_Carrito.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Casita_y_Carrito.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Inicio_y_Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Inicio_y_Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,20 +50,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Inicio_y_Menu.h",
-              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Inicio_y_Menu.h",
-              "RelativeDocumentMoniker": "Inicio_y_Menu.h",
-              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Inicio_y_Menu.h",
-              "RelativeToolTip": "Inicio_y_Menu.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAACAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Entidad.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Entidad.h",
+              "RelativeDocumentMoniker": "Entidad.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Entidad.h",
+              "RelativeToolTip": "Entidad.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-28T15:12:27.129Z",
+              "WhenOpened": "2026-10-03T03:13:41.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Proyectil.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Proyectil.h",
+              "RelativeDocumentMoniker": "Proyectil.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Proyectil.h",
+              "RelativeToolTip": "Proyectil.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-03T02:48:39.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Tirachinas.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Tirachinas.h",
+              "RelativeDocumentMoniker": "Tirachinas.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Tirachinas.h",
+              "RelativeToolTip": "Tirachinas.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-03T02:45:08.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Source.cpp",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Source.cpp",
               "RelativeDocumentMoniker": "Source.cpp",
@@ -60,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Puerta_Secreta.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Puerta_Secreta.h",
               "RelativeDocumentMoniker": "Puerta_Secreta.h",
@@ -74,6 +116,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Arma.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Arma.h",
+              "RelativeDocumentMoniker": "Arma.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Arma.h",
+              "RelativeToolTip": "Arma.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-03T01:48:59.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Inicio_y_Menu.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Inicio_y_Menu.h",
+              "RelativeDocumentMoniker": "Inicio_y_Menu.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Inicio_y_Menu.h",
+              "RelativeToolTip": "Inicio_y_Menu.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-28T15:12:27.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Casita_y_Carrito.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Casita_y_Carrito.h",
               "RelativeDocumentMoniker": "Casita_y_Carrito.h",
