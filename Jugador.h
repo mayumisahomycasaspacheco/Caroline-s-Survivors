@@ -16,8 +16,8 @@ public:
 	float getvida();
 	void recibir_danio(int danio);
 
-	virtual string* getart() = 0;
-	virtual int getartalto() = 0;
+	virtual string* getarte() = 0;
+	virtual int getarte_alto() = 0;
 
 	int getxp();
 	int getnivel();
