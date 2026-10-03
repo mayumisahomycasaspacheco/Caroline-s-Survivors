@@ -26,5 +26,8 @@
     <ClInclude Include="Puerta_Secreta.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Inicio_y_Menu.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

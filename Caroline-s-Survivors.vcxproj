@@ -127,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Casita_y_Carrito.h" />
+    <ClInclude Include="Inicio_y_Menu.h" />
     <ClInclude Include="Puerta_Secreta.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
