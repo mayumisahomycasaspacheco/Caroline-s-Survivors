@@ -1,0 +1,19 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Archivos de compilación
+x64/
+x86/
+Debug/
+Release/
+Caroline.*/
+*.obj
+*.pdb
+*.exe
+*.ilk
+*.tlog
+*.log
+*.recipe
+*.cache
