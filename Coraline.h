@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include "Jugador.h"
 #include "Tirachinas.h"
+#include "Colisiones.h"
 using namespace std;
 using namespace System;
 
@@ -30,7 +31,7 @@ public:
 
 	void dibujar();
 	void borrar(int xanterior, int yanterior);
-	void mover();
+	void mover(int mapa[FILAS][COLUMNAS]);
 
 	bool getjugado();
 	void setjugado(bool jugado);
@@ -217,7 +218,7 @@ void Coraline::limpiar_proyectiles()
 
 }
 
-void Coraline::mover()
+void Coraline::mover(int mapa[FILAS][COLUMNAS])
 {
 	if (jugado = true)
 	{
@@ -225,24 +226,19 @@ void Coraline::mover()
 		{
 			int tecla = getch();
 
+			int xnuevo = x;
+			int ynuevo = y;
+
 			if (tecla == 'w')
 			{
-				if (y > 0)
-				{
-					y--;
-				}
-
+				ynuevo = y - 1;
 				direccionx = 0;
 				direcciony = -1;
 			}
 
 			if (tecla == 's')
 			{
-				if (y < 27)
-				{
-					y++;
-				}
-
+				ynuevo = y + 1;
 				direccionx = 0;
 				direcciony = 1;
 
@@ -250,22 +246,14 @@ void Coraline::mover()
 
 			if (tecla == 'a')
 			{
-				if (x > 0)
-				{
-					x--;
-				}
-
+				xnuevo = x - 1;
 				direccionx = -1;
 				direcciony = 0;
 			}
 
 			if (tecla == 'd')
 			{
-				if (x < 117)
-				{
-					x++;
-				}
-
+				xnuevo = x + 1;
 				direccionx = 1;
 				direcciony = 0;
 
