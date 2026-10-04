@@ -2,6 +2,7 @@
 #include <iostream>
 #include <conio.h>
 #include <Windows.h>
+#pragma comment(lib, "User32.lib")
 #include "Jugador.h"
 #include "Tirachinas.h"
 #include "Colisiones.h"
@@ -55,7 +56,7 @@ Coraline::Coraline(bool jugado) : Jugador()
 
 	proyectiles = nullptr;
 	cantidad_proyectiles = 0;
-	tiempo_disparo = 2000;
+	tiempo_disparo = 800;
 
 	x = 20;
 	y = 10;
@@ -93,7 +94,7 @@ void Coraline::setjugado(bool jugado)
 
 int Coraline::getdanio_arma()
 {
-	return arma->getdanio();
+	return arma->getdanio() + (getnivel() - 1);
 }
 
 int Coraline::getralentizacion_arma()
@@ -125,7 +126,7 @@ void Coraline::dibujar()
 {
 	for (int fila = 0; fila < 3; fila++)
 	{
-		int longitud = coraline_arte[fila].length();
+		int longitud = (int)coraline_arte[fila].length();
 
 		for (int columna = 0; columna < longitud; columna++)
 		{
@@ -141,7 +142,7 @@ void Coraline::borrar(int xanterior, int yanterior)
 {
 	for (int fila = 0; fila < 3; fila++)
 	{
-		int longitud = coraline_arte[fila].length();
+		int longitud = (int)coraline_arte[fila].length();
 		for (int columna = 0; columna < longitud; columna++)
 		{
 			Console::SetCursorPosition(xanterior + columna, yanterior + fila);
@@ -152,7 +153,7 @@ void Coraline::borrar(int xanterior, int yanterior)
 
 void Coraline::disparar(int dx, int dy)
 {
-	if (tiempo_disparo >= 2000)
+	if (tiempo_disparo >= 800) // 0.4s de recarga, en vez de 1 segundo
 	{
 		Proyectil* nuevo_proyectil = arma->atacar(x, y, dx, dy);
 
@@ -220,73 +221,65 @@ void Coraline::limpiar_proyectiles()
 
 void Coraline::mover(int mapa[FILAS][COLUMNAS])
 {
-	if (jugado = true)
+	if (jugado == true)
 	{
-		if (_kbhit())
+		int xnuevo = x;
+		int ynuevo = y;
+
+		if (GetAsyncKeyState('W') & 0x8000)
 		{
-			int tecla = getch();
+			ynuevo = y - 1;
+			direccionx = 0;
+			direcciony = -1;
+		}
 
-			int xnuevo = x;
-			int ynuevo = y;
+		if (GetAsyncKeyState('S') & 0x8000)
+		{
+			ynuevo = y + 1;
+			direccionx = 0;
+			direcciony = 1;
+		}
 
-			if (tecla == 'w')
-			{
-				ynuevo = y - 1;
-				direccionx = 0;
-				direcciony = -1;
-			}
+		if (GetAsyncKeyState('A') & 0x8000)
+		{
+			xnuevo = x - 1;
+			direccionx = -1;
+			direcciony = 0;
+		}
 
-			if (tecla == 's')
-			{
-				ynuevo = y + 1;
-				direccionx = 0;
-				direcciony = 1;
+		if (GetAsyncKeyState('D') & 0x8000)
+		{
+			xnuevo = x + 1;
+			direccionx = 1;
+			direcciony = 0;
+		}
 
-			}
+		if (puede_mover_entidad(mapa, xnuevo, ynuevo, coraline_arte, 3))
+		{
+			x = xnuevo;
+			y = ynuevo;
+		}
 
-			if (tecla == 'a')
-			{
-				xnuevo = x - 1;
-				direccionx = -1;
-				direcciony = 0;
-			}
+		if (GetAsyncKeyState(VK_UP) & 0x8000)
+		{
+			disparar(0, -1);
+		}
 
-			if (tecla == 'd')
-			{
-				xnuevo = x + 1;
-				direccionx = 1;
-				direcciony = 0;
+		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+		{
+			disparar(0, 1);
+		}
 
-			}
+		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+		{
+			disparar(-1, 0);
+		}
 
-			if (tecla == 224)
-			{
-				tecla = _getch();
-
-				if (tecla == 72)
-				{
-					disparar(0, -1);
-				}
-
-				if (tecla == 80)
-				{
-					disparar(0, 1);
-				}
-
-				if (tecla == 75)
-				{
-					disparar(-1, 0);
-				}
-
-				if (tecla == 77)
-				{
-					disparar(1, 0);
-				}
-			}
-
+		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+		{
+			disparar(1, 0);
 		}
 	}
 
 	tiempo_disparo += 100;
-
 }

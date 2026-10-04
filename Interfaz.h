@@ -29,16 +29,24 @@ void Interfaz::dibujar_mapa(int mapa[FILAS][COLUMNAS])
 	for (int fila = 0; fila < FILAS; fila++)
 	{
 		Console::SetCursorPosition(0, fila);
-		
+
 		for (int columna = 0; columna < COLUMNAS; columna++)
 		{
 			if (mapa[fila][columna] == PARED)
 			{
+				Console::ForegroundColor = ConsoleColor::White;
 				cout << "#";
+			}
+
+			else if (mapa[fila][columna] == OBSTACULO)
+			{
+				Console::ForegroundColor = ConsoleColor::DarkYellow;
+				cout << "n";
 			}
 
 			else if (mapa[fila][columna] == PUERTA)
 			{
+				Console::ForegroundColor = ConsoleColor::Green;
 				cout << "=";
 			}
 
@@ -49,6 +57,8 @@ void Interfaz::dibujar_mapa(int mapa[FILAS][COLUMNAS])
 
 		}
 	}
+
+	Console::ForegroundColor = ConsoleColor::Gray;
 }
 
 void Interfaz::dibujar_HUD(Coraline* coraline)

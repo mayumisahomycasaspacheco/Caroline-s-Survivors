@@ -77,6 +77,11 @@ void Entidad::setX(int x)
 	this->x = x;
 }
 
+void Entidad::setY(int y)
+{
+	this->y = y;
+}
+
 void Entidad::mover()
 {
 }

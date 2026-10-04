@@ -1,8 +1,8 @@
 #pragma once
-
 const int VACIO = 0;
 const int PARED = 1;
 const int PUERTA = 2;
+const int OBSTACULO = 3;
 
 const int FILAS = 40;
 const int COLUMNAS = 120;
@@ -15,9 +15,9 @@ int mapa_camerinos[FILAS][COLUMNAS];
 int (*mapas[TOTAL_SALAS])[COLUMNAS];
 
 int spawnx[TOTAL_SALAS] = { 5, 5, 5 };
-int spawny[TOTAL_SALAS] = { 18, 18, 18};
+int spawny[TOTAL_SALAS] = { 18, 18, 18 };
 
-int perros_por_salas[TOTAL_SALAS] = { 3, 5, 8 };
+int perros_por_sala[TOTAL_SALAS] = { 3, 5, 6 };
 
 void generar_sala_vacia(int mapa[FILAS][COLUMNAS])
 {
@@ -44,7 +44,10 @@ void agregar_butacas(int mapa[FILAS][COLUMNAS])
 	{
 		for (int columna = 15; columna <= 100; columna += 3)
 		{
-			mapa[fila][columna] = PARED;
+			if (columna >= 45 && columna <= 50) continue;
+			if (columna >= 80 && columna <= 85) continue;
+
+			mapa[fila][columna] = OBSTACULO;
 		}
 	}
 }
@@ -55,8 +58,8 @@ void agregar_cajas(int mapa[FILAS][COLUMNAS])
 	{
 		for (int fila = 8; fila <= 30; fila += 5)
 		{
-			mapa[fila][columna] = PARED;
-			mapa[fila][columna + 1] = PARED;
+			mapa[fila][columna] = OBSTACULO;
+			mapa[fila][columna + 1] = OBSTACULO;
 		}
 	}
 }

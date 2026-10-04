@@ -129,7 +129,10 @@
     <ClInclude Include="Casita_y_Carrito.h" />
     <ClInclude Include="Colisiones.h" />
     <ClInclude Include="Coraline.h" />
+    <ClInclude Include="Derrota_Victoria.h" />
+    <ClInclude Include="Drop.h" />
     <ClInclude Include="Entidad.h" />
+    <ClInclude Include="Game_Manager.h" />
     <ClInclude Include="Inicio_y_Menu.h" />
     <ClInclude Include="Interfaz.h" />
     <ClInclude Include="Jugador.h" />

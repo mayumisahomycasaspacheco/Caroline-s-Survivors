@@ -25,7 +25,7 @@ Arma::Arma()
 	danio = 0;
 }
 
-Arma::Arma()
+Arma::~Arma()
 {
 }
 

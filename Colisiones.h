@@ -7,15 +7,10 @@ bool puede_mover_entidad(int mapa[FILAS][COLUMNAS], int x, int y, string arte[],
 {
 	for (int fila = 0; fila < arte_alto; fila++)
 	{
-		int ancho = arte[fila].length();
-		
+		int ancho = (int)arte[fila].length();
+
 		for (int columna = 0; columna < ancho; columna++)
 		{
-			if (arte[fila][columna] == ' ')
-			{
-				continue;
-			}
-
 			int mapax = x + columna;
 			int mapay = y + fila;
 
@@ -24,7 +19,7 @@ bool puede_mover_entidad(int mapa[FILAS][COLUMNAS], int x, int y, string arte[],
 				return false;
 			}
 
-			if (mapa[mapay][mapax] == PARED)
+			if (mapa[mapay][mapax] == PARED || mapa[mapay][mapax] == OBSTACULO)
 			{
 				return false;
 			}
