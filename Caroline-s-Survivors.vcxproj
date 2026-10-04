@@ -132,6 +132,7 @@
     <ClInclude Include="Inicio_y_Menu.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Enemigo.h" />
+    <ClInclude Include="Matrices.h" />
     <ClInclude Include="Perro_Volador.h" />
     <ClInclude Include="Proyectil.h" />
     <ClInclude Include="Puerta_Secreta.h" />

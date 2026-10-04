@@ -58,3 +58,60 @@ void Perro::dibujar()
 		}
 	}
 }
+
+void Perro::borrar(int xanterior, int yanterior)
+{
+	for (int fila = 0; fila < 4; fila++)
+	{
+		int longitud = perro_volador_arte[fila].length();
+		for (int columna = 0; columna < longitud; columna++)
+		{
+			Console::SetCursorPosition(xanterior + columna, yanterior + fila);
+			cout << " ";
+		}
+	}
+}
+
+void Perro::ralentizar(int ticks)
+{
+	ticks_lento = ticks;
+}
+
+bool Perro::esta_lento()
+{
+	return ticks_lento > 0;
+}
+
+void Perro::mover(int objetivox, int objetivoy)
+{
+	if (ticks_lento > 0)
+	{
+		ticks_lento--;
+		saltar_movimiento = !saltar_movimiento;
+		if (saltar_movimiento)
+		{
+			return;
+		}
+	}
+
+	if (x < objetivox)
+	{
+		x++;
+	}
+
+	else if (x > objetivox)
+	{
+		x--;
+	}
+
+	if (y < objetivoy)
+	{
+		x--;
+	}
+
+	else if (y > objetivoy)
+	{
+		y--;
+	}
+
+}
