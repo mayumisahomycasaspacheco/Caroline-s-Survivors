@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Perro_Volador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Perro_Volador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Coraline.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0478659F-ED72-52AE-AA1D-995D48254403}|Caroline-s-Survivors.vcxproj|solutionrelative:Coraline.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -59,6 +67,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Perro_Volador.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Perro_Volador.h",
+              "RelativeDocumentMoniker": "Perro_Volador.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Perro_Volador.h",
+              "RelativeToolTip": "Perro_Volador.h",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-04T05:00:05.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Enemigo.h",
+              "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Enemigo.h",
+              "RelativeDocumentMoniker": "Enemigo.h",
+              "ToolTip": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Enemigo.h",
+              "RelativeToolTip": "Enemigo.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-04T04:01:32.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Coraline.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Coraline.h",
               "RelativeDocumentMoniker": "Coraline.h",
@@ -71,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Jugador.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Jugador.h",
               "RelativeDocumentMoniker": "Jugador.h",
@@ -83,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Entidad.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Entidad.h",
               "RelativeDocumentMoniker": "Entidad.h",
@@ -95,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Proyectil.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Proyectil.h",
               "RelativeDocumentMoniker": "Proyectil.h",
@@ -107,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Tirachinas.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Tirachinas.h",
               "RelativeDocumentMoniker": "Tirachinas.h",
@@ -119,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Puerta_Secreta.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Puerta_Secreta.h",
               "RelativeDocumentMoniker": "Puerta_Secreta.h",
@@ -131,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Arma.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Arma.h",
               "RelativeDocumentMoniker": "Arma.h",
@@ -143,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Source.cpp",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Source.cpp",
               "RelativeDocumentMoniker": "Source.cpp",
@@ -155,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Inicio_y_Menu.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Inicio_y_Menu.h",
               "RelativeDocumentMoniker": "Inicio_y_Menu.h",
@@ -167,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Casita_y_Carrito.h",
               "DocumentMoniker": "C:\\Users\\YUYU\\Desktop\\Caroline-s-Survivors\\Casita_y_Carrito.h",
               "RelativeDocumentMoniker": "Casita_y_Carrito.h",
