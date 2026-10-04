@@ -148,3 +148,157 @@ void Coraline::borrar(int xanterior, int yanterior)
 		}
 	}
 }
+
+void Coraline::disparar(int dx, int dy)
+{
+	if (tiempo_disparo >= 2000)
+	{
+		Proyectil* nuevo_proyectil = arma->atacar(x, y, dx, dy);
+
+		Proyectil** nuevos_proyectiles = new Proyectil * [cantidad_proyectiles + 1];
+		for (int i = 0; i < cantidad_proyectiles; i++)
+		{
+			nuevos_proyectiles[i] = proyectiles[i];
+		}
+
+		nuevos_proyectiles[cantidad_proyectiles] = nuevo_proyectil;
+
+		delete[] proyectiles;
+		proyectiles = nuevos_proyectiles;
+		cantidad_proyectiles++;
+
+		tiempo_disparo = 0;
+
+	}
+}
+
+void Coraline::limpiar_proyectiles()
+{
+	int vivos = 0;
+	for (int i = 0; i < cantidad_proyectiles; i++)
+	{
+		if (proyectiles[i]->getdistancia_recorrida() > 0)
+		{
+			vivos++;
+		}
+	}
+
+	if (vivos == cantidad_proyectiles)
+	{
+		return;
+	}
+
+	Proyectil** nuevos_proyectiles = nullptr;
+
+	if (vivos > 0)
+	{
+		nuevos_proyectiles = new Proyectil * [vivos];
+	}
+
+	int j = 0;
+	for (int i = 0; i < cantidad_proyectiles; i++)
+	{
+		if (proyectiles[i]->getdistancia_recorrida() > 0)
+		{
+			nuevos_proyectiles[j] = proyectiles[i];
+			j++;
+		}
+
+		else
+		{
+			delete proyectiles[i];
+		}
+
+	}
+
+	delete[] proyectiles;
+	proyectiles = nuevos_proyectiles;
+	cantidad_proyectiles = vivos;
+
+}
+
+void Coraline::mover()
+{
+	if (jugado = true)
+	{
+		if (_kbhit())
+		{
+			int tecla = getch();
+
+			if (tecla == 'w')
+			{
+				if (y > 0)
+				{
+					y--;
+				}
+
+				direccionx = 0;
+				direcciony = -1;
+			}
+
+			if (tecla == 's')
+			{
+				if (y < 27)
+				{
+					y++;
+				}
+
+				direccionx = 0;
+				direcciony = 1;
+
+			}
+
+			if (tecla == 'a')
+			{
+				if (x > 0)
+				{
+					x--;
+				}
+
+				direccionx = -1;
+				direcciony = 0;
+			}
+
+			if (tecla == 'd')
+			{
+				if (x < 117)
+				{
+					x++;
+				}
+
+				direccionx = 1;
+				direcciony = 0;
+
+			}
+
+			if (tecla == 224)
+			{
+				tecla = _getch();
+
+				if (tecla == 72)
+				{
+					disparar(0, -1);
+				}
+
+				if (tecla == 80)
+				{
+					disparar(0, 1);
+				}
+
+				if (tecla == 75)
+				{
+					disparar(-1, 0);
+				}
+
+				if (tecla == 77)
+				{
+					disparar(1, 0);
+				}
+			}
+
+		}
+	}
+
+	tiempo_disparo += 100;
+
+}
