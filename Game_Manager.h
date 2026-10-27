@@ -18,7 +18,7 @@ class Game_Manager
 private:
 	Interfaz* interfaz;
 	Coraline* coraline;
-	Perro* perros;
+	Perro** perros;
 	int cantidad_perros;
 	Drop** drops;
 	int cantidad_drops;
@@ -131,5 +131,105 @@ void Game_Manager::liberar_drops()
 	for (int i = 0; i < cantidad_drops; i++)
 	{
 		delete drops[i];
+	}
+
+	delete[] drops;
+	drops = nullptr;
+	cantidad_drops = 0;
+}
+
+bool Game_Manager::area_libre_para_perro(int mapa[FILAS][COLUMNAS], int x, int y, int coralineX, int coralineY)
+{
+	for (int dy = 0; dy < 4; dy++)
+	{
+		for (int dx = 0; dx < 16; dx++)
+		{
+			int mx = x + dx, my = y + dy;
+			if (mx < 0 || mx >= COLUMNAS || my < 0 || my >= FILAS)
+			{
+				return false;
+			}
+
+			if (mapa[my][mx != VACIO])
+			{
+				return false;
+			}
+		}
+	}
+
+	bool cerca_de_coraline = (x < coralineX + 10 && x + 16 > coralineX - 10) && (y < coralineY + 8 && y + 4 > coralineY - 8);
+
+	if (cerca_de_coraline)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+void Game_Manager::crear_perros_en_sala(int cantidad)
+{
+	cantidad_perros = cantidad;
+
+	perros = new Perro * [cantidad];
+
+	for (int i = 0; i < cantidad; i++)
+	{
+		int rx = 0, ry = 0, intentos = 0;
+		bool ok = false;
+
+		while (!ok && intentos < 1000)
+		{
+			rx = rand() % (COLUMNAS - 20);
+			ry = rand() % (FILAS - 8);
+			ok = area_libre_para_perro(mapa_actual, rx, ry, coraline->getX(), coraline->getY());
+			intentos++;
+		}
+
+		perros[i] = new Perro(rx, ry);
+		perros[i]->dibujar();
+	}
+}
+
+int Game_Manager::perros_vivos()
+{
+	int vivos = 0;
+
+	for (int i = 0; i < cantidad_perros; i++)
+	{
+		if (perros[i]->esta_vivo())
+		{
+			vivos++;
+		}
+	}
+
+	return vivos;
+}
+
+void Game_Manager::liberar_perros()
+{
+	if (perros == nullptr)
+	{
+		return;
+	}
+
+	for (int i = 0; i < cantidad_perros; i++)
+	{
+		delete perros[i];
+	}
+
+	delete[] perros;
+	perros = nullptr;
+	cantidad_perros = 0;
+}
+
+void Game_Manager::actualizar_perros()
+{
+	for (int i = 0; i < cantidad_perros; i++)
+	{
+		if (!perros[i]->esta_vivo())
+		{
+			continue;
+		}
 	}
 }
