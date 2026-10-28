@@ -388,3 +388,85 @@ void Game_Manager::comprobar_danio_a_coraline()
 		}
 	}
 }
+
+bool Game_Manager::tocar_puerta()
+{
+	for (int fila = 0; fila < 3; fila++)
+	{
+		for (int columna = 0; columna < 3; columna++)
+		{
+			int mapaX = coraline->getX() + columna;
+			int mapaY = coraline->getY() + fila;
+
+			if (mapaX < 0 || mapaX >= COLUMNAS || mapaY < 0 || mapaY >= FILAS)
+			{
+				continue;
+			}
+
+			if (mapa_actual[mapaY][mapaX] == PUERTA)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+void Game_Manager::redibujar_todo()
+{
+	Console::Clear();
+	interfaz->dibujar_mapa(mapa_actual);
+	coraline->dibujar();
+	interfaz->dibujar_HUD(coraline);
+	interfaz->dibujar_objetivo(mapa_indice + 1, TOTAL_SALAS, perros_vivos());
+}
+
+bool Game_Manager::avanzar_sala()
+{
+	liberar_perros();
+	liberar_drops();
+
+	mapa_indice++;
+	
+	if (mapa_indice >= TOTAL_SALAS)
+	{
+		return true;
+	}
+
+	mapa_actual = mapas[mapa_indice];
+	coraline->setX(spawnx[mapa_indice]);
+	coraline->setY(spawny[mapa_indice]);
+	invulnerable = 0;
+
+	redibujar_todo();
+	crear_perros_en_sala(perros_por_sala[mapa_indice]);
+	return false;
+}
+
+bool Game_Manager::jugar()
+{
+	interfaz->configurar_consola();
+	redibujar_todo();
+	crear_perros_en_sala(perros_por_sala[0]);
+
+	while (true)
+	{
+		int xanterior = coraline->getX();
+		int yanterior = coraline->getY();
+
+		coraline->mover(mapa_actual);
+		coraline->borrar(xanterior, yanterior);
+
+		if (coraline->getvida() <= 0)
+		{
+			jugador_murio = true;
+			break;
+		}
+
+		if (perros_vivos() == 0 && mapa_indice == TOTAL_SALAS - 1)
+		{
+			pantalla_victoria();
+			return true;
+		}
+	}
+}
