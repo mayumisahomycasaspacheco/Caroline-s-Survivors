@@ -1,9 +1,8 @@
-#include "Game_Manager.h"
+#include "Inicio_y_Menu.h"
 
 int main()
 {
-	Game_Manager juego;
-	juego.jugar();
+	menu_principal();
 
 	return 0;
 }

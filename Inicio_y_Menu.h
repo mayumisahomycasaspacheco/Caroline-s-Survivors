@@ -104,5 +104,96 @@ void mostrar_creditos()
 	Console::ForegroundColor = ConsoleColor::Yellow;
 	centrar_texto("CREDITS", 5);
 
-	Console::ForegroundColor = 
+	Console::ForegroundColor = ConsoleColor::Gray;
+	centrar_texto("Inspired by Coraline (Neil Gaiman / Laika", 8);
+	centrar_texto("Made for miauyummii", 9);
+
+	Console::ForegroundColor = ConsoleColor::DarkGray;
+	centrar_texto("Press any key to go back to the menu...", 22);
+	Console::ForegroundColor = ConsoleColor::Gray;
+
+	limpiar_buffer_teclado();
+	_getch();
+}
+
+void jugar_con_lore()
+{
+	Console::ForegroundColor = ConsoleColor::Gray;
+	system("cls");
+
+	casita(7, 1);
+	carrito(95, 52, 23);
+	personaje(75, 20, 19, 7, 1, 52, 23);
+
+	system("cls");
+
+	int cortina_x = 50;
+	int cortina_y = 5;
+	int puerta_x = 5;
+	int puerta_y = 23;
+
+	cortina(cortina_x, cortina_y);
+	puertita(puerta_x, puerta_y);
+	personaje_va_puerta(80, puerta_x + 8, 21, cortina_x, cortina_y, puerta_x, puerta_y);
+
+	system("cls");
+
+	Game_Manager juego;
+	juego.jugar();
+}
+
+void menu_principal()
+{
+	configurar_ventana();
+
+	char opcion;
+	bool opcion_invalida = false;
+
+	do
+	{
+		system("cls");
+
+		dibujar_titulo();
+		dibujar_descripcion();
+		dibujar_opciones();
+
+		if (opcion_invalida)
+		{
+			Console::ForegroundColor = ConsoleColor::Red;
+			centrar_texto("Invalid option. Please press 1, 2, or 3.", 29);
+			Console::ForegroundColor = ConsoleColor::Gray;
+		}
+
+		limpiar_buffer_teclado();
+		opcion = _getch();
+
+		if (opcion == '1')
+		{
+			opcion_invalida = false;
+			jugar_con_lore();
+		}
+
+		else if (opcion == '2')
+		{
+			opcion_invalida = false;
+			mostrar_creditos();
+		}
+
+		else if (opcion == '3')
+		{
+			opcion_invalida = false;
+		}
+
+		else
+		{
+			opcion_invalida = true;
+		}
+	}
+
+	while (opcion != '3');
+
+	system("cls");
+	Console::ForegroundColor = ConsoleColor::Gray;
+	centrar_texto("Thanks for playing!", 15);
+	Console::SetCursorPosition(0, 20);
 }
