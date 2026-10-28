@@ -32,8 +32,8 @@ Proyectil::Proyectil(int x, int y, int dx, int dy)
 	this->y = y;
 	this->dx = dx;
 	this->dy = dy;
-	velocidad = 3;
-	distancia_recorrida = 7;
+	velocidad = 1;
+	distancia_recorrida = 25;
 }
 
 Proyectil::~Proyectil()

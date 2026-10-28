@@ -35,25 +35,25 @@ Proyectil* Tirachinas::atacar(int x, int y, int dx, int dy)
 
 	if (dx == 1)
 	{
-		inicioX = x + 9;
+		inicioX = x + 3;
 		inicioY = y + 1;
 	}
 
 	if (dx == -1)
 	{
-		inicioX = x - 3;
+		inicioX = x - 1;
 		inicioY = y + 1;
 	}
 
 	if (dy == -1)
 	{
-		inicioX = x + 4;
+		inicioX = x + 1;
 		inicioY = y - 1;
 	}
 
 	if (dy == 1)
 	{
-		inicioX = x + 4;
+		inicioX = x + 1;
 		inicioY = y + 3;
 	}
 

@@ -66,9 +66,10 @@ void agregar_cajas(int mapa[FILAS][COLUMNAS])
 
 void abrir_puerta(int mapa[FILAS][COLUMNAS], int fila_centro)
 {
-	mapa[fila_centro][COLUMNAS - 1] = PUERTA;
-	mapa[fila_centro + 1][COLUMNAS - 1] = PUERTA;
-	mapa[fila_centro + 2][COLUMNAS - 1] = PUERTA;
+	for (int i = -1; i <= 3; i++)
+	{
+		mapa[fila_centro + i][COLUMNAS - 1] = PUERTA;
+	}
 }
 
 void construir_mapas()

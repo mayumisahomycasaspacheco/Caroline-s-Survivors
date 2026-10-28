@@ -393,7 +393,7 @@ bool Game_Manager::tocar_puerta()
 {
 	for (int fila = 0; fila < 3; fila++)
 	{
-		for (int columna = 0; columna < 3; columna++)
+		for (int columna = 0; columna < 4; columna++)
 		{
 			int mapaX = coraline->getX() + columna;
 			int mapaY = coraline->getY() + fila;
@@ -468,5 +468,52 @@ bool Game_Manager::jugar()
 			pantalla_victoria();
 			return true;
 		}
+
+		if (tocar_puerta() && perros_vivos() == 0)
+		{
+			pantalla_nivel_superado(mapa_indice + 1, TOTAL_SALAS);
+			if (avanzar_sala())
+			{
+				break;
+			}
+			continue;
+		}
+
+		actualizar_perros();
+		comprobar_danio_a_coraline();
+		actualizar_proyectiles();
+		comprobar_colisiones();
+		actualizar_drops();
+
+		for (int i = 0; i < cantidad_drops; i++)
+		{
+			if (drops[i] != nullptr)
+			{
+				drops[i]->dibujar();
+			}
+		}
+
+		bool coraline_visible = (invulnerable == 0) || ((invulnerable / 3) % 2 == 0);
+
+		if (coraline_visible)
+		{
+			coraline->dibujar();
+		}
+
+		coraline->limpiar_proyectiles();
+
+		interfaz->dibujar_HUD(coraline);
+		interfaz->dibujar_objetivo(mapa_indice + 1, TOTAL_SALAS, perros_vivos());
+
+		Sleep(50);
 	}
+
+	if (jugador_murio)
+	{
+		pantalla_derrota();
+		return false;
+	}
+
+	pantalla_victoria();
+	return true;
 }

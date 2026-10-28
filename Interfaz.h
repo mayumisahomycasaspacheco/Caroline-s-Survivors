@@ -20,8 +20,15 @@ void Interfaz::configurar_consola()
 {
 	Console::Title = "Coraline vs Perros Voladores (Maravilla del Teatro)";
 	Console::CursorVisible = false;
-	Console::SetBufferSize(COLUMNAS + 1, FILAS + 5);
-	Console::SetWindowSize(COLUMNAS, FILAS + 2);
+
+	try
+	{
+		Console::SetBufferSize(COLUMNAS + 1, FILAS + 5);
+		Console::SetWindowSize(COLUMNAS, FILAS + 2);
+	}
+	catch (Exception^)
+	{
+	}
 }
 
 void Interfaz::dibujar_mapa(int mapa[FILAS][COLUMNAS])
@@ -72,7 +79,7 @@ void Interfaz::dibujar_HUD(Coraline* coraline)
 
 void Interfaz::dibujar_objetivo(int sala_actual, int total_salas, int perros_vivos)
 {
-	Console::SetCursorPosition(0, FILAS + 1);
+	Console::SetCursorPosition(60, FILAS);
 	cout << "Sala " << sala_actual << "/" << total_salas
 		<< "    Perros vivos: " << perros_vivos
 		<< "           ";

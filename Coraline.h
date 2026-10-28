@@ -260,6 +260,11 @@ void Coraline::mover(int mapa[FILAS][COLUMNAS])
 			y = ynuevo;
 		}
 
+		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
+		{
+			disparar(direccionx, direcciony);
+		}
+
 		if (GetAsyncKeyState(VK_UP) & 0x8000)
 		{
 			disparar(0, -1);

@@ -65,5 +65,12 @@ void Jugador::sumarxp(int cantidad)
 	{
 		xp -= xp_para_subir;
 		nivel++;
+
+		vida += 20;
+
+		if (vida > 100)
+		{
+			vida = 100;
+		}
 	}
 }
