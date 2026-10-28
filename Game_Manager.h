@@ -320,3 +320,71 @@ void Game_Manager::actualizar_proyectiles()
 		}
 	}
 }
+
+void Game_Manager::comprobar_colisiones()
+{
+	for (int i = 0; i < cantidad_perros; i++)
+	{
+		if (!perros[i]->esta_vivo())
+		{
+			continue;
+		}
+
+		for (int j = 0; j < coraline->getcantidad_proyectiles(); j++)
+		{
+			Proyectil* proyectil = coraline->getproyectiles()[j];
+
+			if (proyectil->getdistancia_recorrida() <= 0)
+			{
+				continue;
+			}
+
+			bool solapax = proyectil->getX() >= perros[i]->getX() + PERRO_HITBOX_OFFSET_X && proyectil->getX() < perros[i]->getX() + PERRO_HITBOX_OFFSET_X + PERRO_HITBOX_ANCHO;
+			bool solapay = proyectil->getY() >= perros[i]->getY() && proyectil->getY() < perros[i]->getY() + PERRO_HITBOX_ALTO;
+
+			if (solapax && solapay)
+			{
+				perros[i]->recibir_danio(coraline->getdanio_arma());
+				perros[i]->ralentizar(coraline->getralentizacion_arma());
+
+				proyectil->borrar(proyectil->getX(), proyectil->getY());
+				proyectil->detener();
+
+				if (!perros[i]->esta_vivo())
+				{
+					perros[i]->borrar(perros[i]->getX(), perros[i]->getY(), mapa_actual);
+					agregar_drops(perros[i]->getX(), perros[i]->getY());
+				}
+
+				break;
+			}
+		}
+	}
+}
+
+void Game_Manager::comprobar_danio_a_coraline()
+{
+	if (invulnerable > 0)
+	{
+		invulnerable--;
+		return;
+	}
+
+	for (int i = 0; i < cantidad_perros; i++)
+	{
+		if (!perros[i]->esta_vivo())
+		{
+			continue;
+		}
+
+		bool solapax = coraline->getX() < perros[i]->getX() + PERRO_HITBOX_OFFSET_X + PERRO_HITBOX_ANCHO && coraline->getX() + 3 > perros[i]->getX() + PERRO_HITBOX_OFFSET_X;
+		bool solapay = coraline->getY() < perros[i]->getY() + PERRO_HITBOX_ALTO && coraline->getY() + 3 > perros[i]->getY();
+
+		if (solapax && solapay)
+		{
+			coraline->recibir_danio(perros[i]->getdanio());
+			invulnerable = 20;
+			break;
+		}
+	}
+}
