@@ -58,7 +58,15 @@ void Perro::dibujar()
 				continue;
 			}
 
-			Console::SetCursorPosition(x + columna, y + fila);
+			int mapaX = x + columna;
+			int mapaY = y + fila;
+
+			if (mapaX < 0 || mapaX >= COLUMNAS || mapaY < 0 || mapaY >= FILAS)
+			{
+				continue;
+			}
+
+			Console::SetCursorPosition(mapaX, mapaY);
 			cout << perro_volador_arte[fila][columna];
 		}
 	}
@@ -74,12 +82,12 @@ void Perro::borrar(int xanterior, int yanterior, int mapa[FILAS][COLUMNAS])
 			int mapaX = xanterior + columna;
 			int mapaY = yanterior + fila;
 
-			Console::SetCursorPosition(mapaX, mapaY);
-
 			if (mapaX < 0 || mapaX >= COLUMNAS || mapaY < 0 || mapaY >= FILAS)
 			{
 				continue;
 			}
+
+			Console::SetCursorPosition(mapaX, mapaY);
 
 			if (mapa[mapaY][mapaX] == PARED)
 			{
@@ -133,24 +141,26 @@ void Perro::mover(int objetivox, int objetivoy)
 		return;
 	}
 
-	if (x < objetivox)
+	int destinox = objetivox + 1 - (PERRO_HITBOX_OFFSET_X + PERRO_HITBOX_ANCHO / 2);
+	int destinoy = objetivoy;
+
+	if (x < destinox)
 	{
 		x++;
 	}
 
-	else if (x > objetivox)
+	else if (x > destinox)
 	{
 		x--;
 	}
 
-	if (y < objetivoy)
+	if (y < destinoy)
 	{
 		y++;
 	}
 
-	else if (y > objetivoy)
+	else if (y > destinoy)
 	{
 		y--;
 	}
-
 }

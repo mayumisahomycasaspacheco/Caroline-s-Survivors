@@ -94,7 +94,7 @@ void dibujar_opciones()
 	centrar_texto("3. Exit", 24);
 
 	Console::ForegroundColor = ConsoleColor::Gray;
-	centrar_texto("Choose an option (1-3", 27);
+	centrar_texto("Choose an option (1-3)", 27);
 }
 
 void mostrar_creditos()
@@ -105,8 +105,8 @@ void mostrar_creditos()
 	centrar_texto("CREDITS", 5);
 
 	Console::ForegroundColor = ConsoleColor::Gray;
-	centrar_texto("Inspired by Coraline (Neil Gaiman / Laika", 8);
-	centrar_texto("Made for miauyummii", 9);
+	centrar_texto("Inspired by Coraline (Neil Gaiman / Laika)", 8);
+	centrar_texto("Made by miauyummii for YSWS SNOWGLOBE by HACK CLUB", 9);
 
 	Console::ForegroundColor = ConsoleColor::DarkGray;
 	centrar_texto("Press any key to go back to the menu...", 22);

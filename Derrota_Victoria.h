@@ -19,13 +19,13 @@ void pantalla_derrota()
 	Console::SetCursorPosition(40, 15);
 	cout << "====================================";
 	Console::SetCursorPosition(40, 16);
-	cout << "     Coraline fue atrapada...     ";
+	cout << "        Coraline was trapped...     ";
 	Console::SetCursorPosition(40, 17);
 	cout << "            GAME OVER";
 	Console::SetCursorPosition(40, 18);
 	cout << "====================================";
 	Console::SetCursorPosition(40, 20);
-	cout << "Presiona una tecla para salir...";
+	cout << "Press any key to exit...";
 	Sleep(5000);
 	limpiar_buffer_teclado();
 	_getch();
@@ -37,11 +37,11 @@ void pantalla_nivel_superado(int sala_actual, int total_salas)
 	Console::SetCursorPosition(40, 15);
 	cout << "====================================";
 	Console::SetCursorPosition(40, 16);
-	cout << "   Sala " << sala_actual << " de " << total_salas << " superada!";
+	cout << "   Room " << sala_actual << " of " << total_salas << " overcome!";
 	Console::SetCursorPosition(40, 17);
 	cout << "====================================";
 	Console::SetCursorPosition(40, 19);
-	cout << "Presione una tecla para continuar...";
+	cout << "Press any key to exit...";
 	Sleep(5000);
 	limpiar_buffer_teclado();
 	_getch();
@@ -51,13 +51,13 @@ void pantalla_victoria()
 {
 	Console::Clear();
 	Console::SetCursorPosition(40, 15);
-	cout << "====================================";
+	cout << "==============================================";
 	Console::SetCursorPosition(40, 16);
-	cout << " Coraline escapo del teatro. Ganaste!";
+	cout << " Coraline escaped from the theater. You won.!";
 	Console::SetCursorPosition(40, 17);
-	cout << "====================================";
+	cout << "==============================================";
 	Console::SetCursorPosition(40, 19);
-	cout << "Presiona una tecla para continuar...";
+	cout << "Press any key to exit...";
 	Sleep(5000);
 	limpiar_buffer_teclado();
 	_getch();
